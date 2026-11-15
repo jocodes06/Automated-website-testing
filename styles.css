@@ -1,0 +1,107 @@
+:root {
+  --bg: #f5f3ff;
+  --card: #ffffff;
+  --text: #1e1b2e;
+  --muted: #6b6880;
+  --accent: #6d4aff;
+  --accent-dark: #5636d6;
+  --border: #ddd8f0;
+  --error: #d93a5b;
+  --ok: #1f9d6b;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+.logo { font-weight: 700; font-size: 1.2rem; color: var(--accent); text-decoration: none; }
+nav ul { display: flex; gap: 8px; list-style: none; }
+nav a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background .2s, color .2s;
+}
+nav a:hover, nav a.active { background: var(--bg); color: var(--accent); }
+
+
+main { display: flex; justify-content: center; padding: 48px 16px; }
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 30px rgba(109, 74, 255, .08);
+}
+h1 { font-size: 1.6rem; margin-bottom: 4px; }
+.sub { color: var(--muted); margin-bottom: 24px; }
+.field { margin-bottom: 18px; }
+label { display: block; font-weight: 600; font-size: .9rem; margin-bottom: 6px; }
+input, select, textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  background: #fff;
+  transition: border-color .2s, box-shadow .2s;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(109, 74, 255, .15);
+}
+textarea { resize: vertical; min-height: 90px; }
+.error { color: var(--error); font-size: .82rem; margin-top: 4px; min-height: 1em; }
+.check { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.check input { width: auto; }
+.check label { margin: 0; font-weight: 400; }
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+button:hover { background: var(--accent-dark); }
+
+#success {
+  display: none;
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: #e6f7f0;
+  color: var(--ok);
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+@media (max-width: 520px) {
+  nav { flex-direction: column; gap: 10px; }
+}
